@@ -1,0 +1,23 @@
+[database]
+name = "book_db"
+
+[books]
+# Default owner of each book, can be overridden per book at any point from the UI
+owner = "eBiblio"
+# Number of books listed on main page. Don't recommend changing this, but if you wish go ahead.
+number = 10
+
+[style]
+primary_color = "#523211"
+
+[genres]
+list = [
+    "Fiction",
+    "Reference",
+    "Education",
+    "Comedy",
+    "Graphic Novel",
+    "History",
+    "Theory",
+    "Random"
+]
