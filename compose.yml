@@ -2,9 +2,9 @@ services:
   app:
     build: .
     image: ebiblio:latest
-    restart: always
+    restart: unless-stopped
     ports:
-        - 800:8080
+        - 8080:8080
     environment:
         - PUID=1000 # change this to your user id
         - PGID=1000 # change this to your group id
