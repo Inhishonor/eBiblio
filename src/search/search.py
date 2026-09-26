@@ -17,14 +17,11 @@ async def search_db(query: str):
 
 
 async def search_general(query: str):
-    books = await models.Book.filter(
+    return await models.Book.filter(
         Q(name__icontains=query)
         | Q(author__icontains=query)
         | Q(subject__icontains=query)
     )
-    print("Found:", len(books))
-    return books
-
 
 async def search_by_author(query: str):
     return await models.Book.filter(Q(author__icontains=query)).all()
