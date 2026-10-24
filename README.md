@@ -6,11 +6,11 @@ This is a simple SPA (Single Page Application) for the management of a home libr
 
 1. Clone the git repo, and update [compose.yml](./compose.yml) with your environment variables, and correct port number.
 
-2. Run `docker compose build -d`
+2. Run `docker compose build`
 
-3. When that finishes, run `docker compose up -d`.
+3. When that finishes, run `docker compose up`.
 
-Then you can navigate to the port number on localhost and begin using it.
+Then you can navigate to the localhost port number shown in the logs and begin using it.
 
 ## Configuration
 
