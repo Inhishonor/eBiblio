@@ -12,6 +12,8 @@ async def search_db(query: str):
         return await search_by_subject(query.removeprefix("subject: "))
     elif query.startswith("owner: "):
         return await search_by_owner(query.removeprefix("owner: "))
+    elif query.startswith("shelf: "):
+        return await search_by_shelf(query.removeprefix("shelf: "))
     else:
         return await search_general(query)
 
@@ -37,3 +39,6 @@ async def search_by_subject(query: str):
 
 async def search_by_owner(query: str):
     return await models.Book.filter(Q(owner__icontains=query)).all()
+
+async def search_by_shelf(query: str):
+    return await models.Book.filter(Q(shelf__icontains=query)).all()

@@ -238,6 +238,11 @@ async def index():
                         "owner:", on_click=lambda: search_bar.set_value("owner: ")
                     ).classes("w-1/2")
                     ui.label("Search only for book owners").classes("text-lg")
+                with ui.row().classes("w-full items-center"):
+                    ui.button(
+                        "shelf:", on_click=lambda: search_bar.set_value("shelf: ")
+                    ).classes("w-1/2")
+                    ui.label("Search only for book shelves").classes("text-lg")
 
     with (
         ui.column().classes("fixed bottom-0 w-full items-center p-8"),
