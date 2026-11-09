@@ -3,7 +3,7 @@ from src import models
 
 async def get_books_by_tab(tab_name):
     if tab_name == "All":
-        books = await get_books_by_genre(None)
+        books = await get_all_books()
     elif tab_name == "Checked Out":
         books = await get_books_by_checkout()
     else:
@@ -11,13 +11,15 @@ async def get_books_by_tab(tab_name):
     return books
 
 
+async def get_all_books():
+    books: list[models.Book] = await models.Book.all()
+    return books
+
+
 async def get_books_by_genre(genre):
-    if not genre:
-        books: list[models.Book] = await models.Book.all()
-    else:
-        books: list[models.Book] = await models.Book.filter(
-            genre=models.genres.Genres(genre)
-        )
+    books: list[models.Book] = await models.Book.filter(
+        genre=models.genres.Genres(genre)
+    )
     return books
 
 
